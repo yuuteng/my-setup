@@ -203,7 +203,7 @@ tr[data-jump]:hover .c-go svg { opacity: 1; transform: none; }
 .search input::placeholder { color: var(--text-3); }
 
 /* 卡片 */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; align-items: start; }
 .card {
   position: relative; overflow: hidden; padding: 18px; border-radius: var(--radius);
   background: var(--card);
@@ -239,8 +239,23 @@ tr[data-jump]:hover .c-go svg { opacity: 1; transform: none; }
 .specs { margin-top: 12px; border-radius: 12px; background: var(--fill); overflow: hidden; }
 .specs div { display: flex; gap: 14px; padding: 8px 12px; font-size: 14px; }
 .specs div + div { box-shadow: inset 0 .5px 0 var(--line); }
-.specs dt { flex: none; color: var(--text-2); }
+.specs dt { flex: none; color: var(--text-2); max-width: 46%; }
 .specs dd { margin-left: auto; text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; }
+.more summary {
+  display: flex; align-items: center; gap: 6px; margin-top: 10px; padding: 7px 10px; border-radius: 10px;
+  font-size: 13.5px; font-weight: 600; color: var(--accent); cursor: pointer; list-style: none; user-select: none;
+  transition: background .2s;
+}
+.more summary::-webkit-details-marker { display: none; }
+.more summary:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.more summary svg { width: 14px; height: 14px; transition: transform .35s var(--ease); }
+.more summary i { margin-left: auto; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--text-3); }
+.more .opened, .more[open] .closed { display: none; }
+.more[open] .opened { display: inline; }
+.more[open] summary svg { transform: rotate(90deg); }
+.more .specs { margin-top: 6px; }
+.more[open] .specs { animation: unfold .45s var(--ease); }
+@keyframes unfold { from { opacity: 0; transform: translateY(-8px); } }
 .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .links a {
   position: relative; display: inline-flex; align-items: center; gap: 5px; text-decoration: none;
@@ -408,11 +423,15 @@ footer { padding: 0 0 calc(34px + env(safe-area-inset-bottom)); text-align: cent
       if (it.buy.channel) specs.push(["购买渠道", it.buy.channel]);
       if (it.buy.price) specs.push(["价格", it.buy.price]);
     }
-    const text = [it.name, it.model, it.summary, ...specs.flat(), it.note].filter(Boolean).join(" ").toLowerCase();
+    const more = it.more || [];
+    const row = ([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`;
+    const text = [it.name, it.model, it.summary, ...specs.flat(), ...more.flat(), it.note].filter(Boolean).join(" ").toLowerCase();
     return `<article class="card reveal" id="${id}" data-text="${esc(text)}">
       <div class="card-top"><div class="ico">${svg(ICONS[it.icon] || ICONS.box)}</div><div class="kind">${esc(it.name)}</div></div>
       ${it.model ? `<button class="model copy" data-copy="${esc(it.model)}" title="点击复制">${esc(it.model)}</button>` : ""}
-      ${specs.length ? `<dl class="specs">${specs.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
+      ${specs.length ? `<dl class="specs">${specs.map(row).join("")}</dl>` : ""}
+      ${more.length ? `<details class="more"><summary>${CHEV}<span class="closed">全部参数</span><span class="opened">收起</span><i>${more.length} 项</i></summary>
+        <dl class="specs">${more.map(row).join("")}</dl></details>` : ""}
       ${it.links && it.links.length ? `<div class="links">${it.links.map((l) =>
         `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}${LINK}</a>`).join("")}</div>` : ""}
       ${it.note ? `<p class="note">${WARN}<span>${esc(it.note)}</span></p>` : ""}
