@@ -78,11 +78,14 @@ window.SETUP = {
               icon: "ram",
               name: "内存",
               model: "Crucial Ballistix BL8G36C16U4W ×2",
+              links: [{ label: "规格（Pangoly，2 条套装）", url: "https://pangoly.com/en/product/crucial-bl2k8g36c16u4w" }],
               summary: "16 GB（8 GB ×2），DDR4-3600 CL16",
               specs: [
                 ["容量", "16 GB（8 GB × 2，双通道）"],
-                ["规格", "DDR4-3600 CL16"],
-                ["颜色", "白色"],
+                ["规格", "DDR4-3600，XMP 2.0"],
+                ["时序", "16-18-18-38"],
+                ["电压", "1.35 V（XMP）"],
+                ["颜色", "白色，带散热片"],
               ],
             },
             {
@@ -104,6 +107,7 @@ window.SETUP = {
               icon: "case",
               name: "机箱",
               model: "NZXT H510",
+              links: [{ label: "Amazon 商品页", url: "https://www.amazon.fr/dp/B07SC658X1" }],
               summary: "ATX 中塔，黑红配色，钢化玻璃侧板",
               specs: [
                 ["类型", "ATX 中塔"],
@@ -313,15 +317,18 @@ window.SETUP = {
               links: [
                 { label: "索尼官网规格", url: "https://www.sony.co.uk/headphones/products/wh-1000xm6/spec" },
               ],
-              summary: "蓝牙主动降噪",
+              summary: "蓝牙主动降噪，午夜蓝",
               specs: [
-                ["类型", "头戴式主动降噪"],
+                ["类型", "头戴式主动降噪，可折叠"],
                 ["连接", "蓝牙"],
+                ["颜色", "午夜蓝"],
+                ["续航", "30 小时（开降噪）"],
               ],
+              buy: { date: "2025-05-24", channel: "Amazon.fr" },
             },
             {
               icon: "gamepad",
-              name: "手柄 1",
+              name: "手柄",
               model: "飞智 八爪鱼 5 龙珠Z 联名标准款",
               links: [
                 { label: "八爪鱼 5 发布报道（新浪科技）", url: "https://finance.sina.com.cn/tech/digi/2025-06-10/doc-inezrake8784392.shtml" },
@@ -335,16 +342,6 @@ window.SETUP = {
                 ["软件", "飞智空间站"],
               ],
               buy: { date: "2026-05-30", channel: "天猫 flydigi飞智旗舰店", price: "¥550" },
-            },
-            {
-              icon: "gamepad",
-              name: "手柄 2",
-              model: "Xbox Wireless Controller",
-              links: [
-                { label: "Xbox 官网", url: "https://www.xbox.com/en-US/accessories/controllers/xbox-wireless-controller" },
-              ],
-              summary: "蓝牙",
-              specs: [["连接", "蓝牙"]],
             },
             {
               icon: "camera",
