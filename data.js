@@ -7,6 +7,7 @@
 //   summary  汇总表里的一句话规格
 //   specs    详细规格，[["名称", "内容"], ...]
 //   buy      购买信息 { date: "2025-08-04", channel: "Amazon", price: "€1,299" }
+//   links    详细规格的网页 [{ label: "官网规格", url: "https://..." }]
 //   note     需要提醒的事
 //   icon     图标名，见 index.html 里的 ICONS
 
@@ -17,6 +18,7 @@ window.SETUP = {
     {
       id: "pc",
       title: "电脑",
+      icon: "monitor",
       groups: [
         {
           id: "host",
@@ -26,6 +28,9 @@ window.SETUP = {
               icon: "gpu",
               name: "显卡",
               model: "GIGABYTE GeForce RTX 5080 GAMING OC 16G",
+              links: [
+                { label: "技嘉官网规格", url: "https://www.gigabyte.com/Graphics-Card/GV-N5080GAMING-OC-16GD/sp" },
+              ],
               summary: "16 GB GDDR7，DP 2.1b ×3 + HDMI 2.1b ×1",
               specs: [
                 ["型号编号", "GV-N5080GAMING OC-16GD"],
@@ -42,6 +47,9 @@ window.SETUP = {
               icon: "cpu",
               name: "处理器",
               model: "Intel Core i5-12600KF",
+              links: [
+                { label: "Intel 官网规格", url: "https://www.intel.com/content/www/us/en/products/sku/134590/intel-core-i512600kf-processor-20m-cache-up-to-4-90-ghz/specifications.html" },
+              ],
               summary: "10 核 16 线程，LGA 1700，无核显",
               specs: [
                 ["核心", "10 核（6 性能核 + 4 能效核）"],
@@ -54,6 +62,9 @@ window.SETUP = {
               icon: "board",
               name: "主板",
               model: "MSI PRO Z690-A DDR4",
+              links: [
+                { label: "MSI 官网规格", url: "https://www.msi.com/Motherboard/PRO-Z690-A-DDR4/Specification" },
+              ],
               summary: "Z690，ATX，DDR4",
               specs: [
                 ["芯片组", "Intel Z690"],
@@ -78,6 +89,9 @@ window.SETUP = {
               icon: "cooler",
               name: "CPU 水冷",
               model: "MSI MAG CoreLiquid C240",
+              links: [
+                { label: "MSI 官网规格", url: "https://www.msi.com/Liquid-Cooling/MAG-CORELIQUID-C240/Specification" },
+              ],
               summary: "240 一体式水冷",
               specs: [
                 ["类型", "240 一体式水冷，2 个冷排风扇"],
@@ -100,9 +114,30 @@ window.SETUP = {
               buy: { date: "2021-11-22", channel: "Amazon.fr" },
             },
             {
+              icon: "psu",
+              name: "电源",
+              model: "Corsair RM850e（2023）",
+              links: [
+                { label: "Corsair 官网", url: "https://www.corsair.com/p/psu/cp-9020263-na/rme-series-rm850e-fully-modular-low-noise-atx-power-supply-cp-9020263-na" },
+              ],
+              summary: "850 W，80 PLUS 金牌，全模组，ATX 3.0",
+              specs: [
+                ["功率", "850 W"],
+                ["认证", "80 PLUS 金牌"],
+                ["模组", "全模组"],
+                ["标准", "ATX 3.0，兼容 PCIe 5.0"],
+                ["风扇", "120 mm，低负载停转"],
+                ["长度", "140 mm"],
+              ],
+              buy: { date: "2024-07-28", channel: "Amazon.fr" },
+            },
+            {
               icon: "ssd",
               name: "固态硬盘 1",
               model: "Samsung PM9A1 1TB",
+              links: [
+                { label: "三星官网 PM9A1", url: "https://semiconductor.samsung.com/ssd/pc-ssd/pm9a1/" },
+              ],
               summary: "NVMe PCIe 4.0，系统盘 C: 到 F:",
               specs: [
                 ["料号", "MZVL21T0HCLR-00B00"],
@@ -116,6 +151,9 @@ window.SETUP = {
               icon: "ssd",
               name: "固态硬盘 2",
               model: "Samsung PM9A1 2TB",
+              links: [
+                { label: "三星官网 PM9A1", url: "https://semiconductor.samsung.com/ssd/pc-ssd/pm9a1/" },
+              ],
               summary: "NVMe PCIe 4.0，O: P:",
               specs: [
                 ["料号", "MZVL22T0HBLB-00BH1"],
@@ -182,6 +220,9 @@ window.SETUP = {
               icon: "monitor",
               name: "主显示器",
               model: "BenQ EX2780Q",
+              links: [
+                { label: "BenQ 官网规格", url: "https://www.benq.com/en-us/monitor/gaming/ex2780q/spec.html" },
+              ],
               summary: "27 英寸 IPS，2560×1440，144 Hz",
               specs: [
                 ["尺寸", "27 英寸 IPS"],
@@ -195,6 +236,9 @@ window.SETUP = {
               icon: "monitor",
               name: "副显示器",
               model: "HP E243d",
+              links: [
+                { label: "HP 支持页面", url: "https://support.hp.com/us-en/product/hp-elitedisplay-e243d-23.8-inch-docking-monitor/19887836" },
+              ],
               summary: "23.8 英寸 IPS，1920×1080，60 Hz",
               specs: [
                 ["尺寸", "23.8 英寸 IPS"],
@@ -207,6 +251,9 @@ window.SETUP = {
               icon: "tv",
               name: "电视",
               model: "TCL 85MQLED87",
+              links: [
+                { label: "规格表（tvsfaq）", url: "https://www.tvsfaq.com/en/specifications/tcl-85mqled87" },
+              ],
               summary: "85 英寸 QLED Mini LED，4K 144 Hz，VRR",
               specs: [
                 ["尺寸", "85 英寸"],
@@ -233,6 +280,9 @@ window.SETUP = {
               icon: "mouse",
               name: "鼠标",
               model: "Logitech G PRO Wireless",
+              links: [
+                { label: "罗技官网", url: "https://www.logitechg.com/en-us/products/gaming-mice/pro-wireless-mouse.html" },
+              ],
               summary: "LIGHTSPEED 无线",
               specs: [
                 ["连接", "LIGHTSPEED 无线接收器"],
@@ -242,14 +292,23 @@ window.SETUP = {
             {
               icon: "keyboard",
               name: "键盘",
-              model: "Varmilo 阿米洛（蓝牙名 VD-2）",
-              summary: "蓝牙机械键盘",
-              specs: [["连接", "蓝牙"]],
+              model: "达尔优 EK815 机械合金版",
+              summary: "Cherry 青轴，108 键，有线",
+              specs: [
+                ["轴体", "Cherry 青轴"],
+                ["键数", "108 键"],
+                ["连接", "有线"],
+                ["颜色", "黑色"],
+              ],
+              buy: { date: "2017-08-31", channel: "天猫 达尔优翔远专卖店", price: "¥387" },
             },
             {
               icon: "headphones",
               name: "头戴耳机",
               model: "Sony WH-1000XM6",
+              links: [
+                { label: "索尼官网规格", url: "https://www.sony.co.uk/headphones/products/wh-1000xm6/spec" },
+              ],
               summary: "蓝牙主动降噪",
               specs: [
                 ["类型", "头戴式主动降噪"],
@@ -270,6 +329,9 @@ window.SETUP = {
               icon: "gamepad",
               name: "手柄 2",
               model: "Xbox Wireless Controller",
+              links: [
+                { label: "Xbox 官网", url: "https://www.xbox.com/en-US/accessories/controllers/xbox-wireless-controller" },
+              ],
               summary: "蓝牙",
               specs: [["连接", "蓝牙"]],
             },
@@ -277,10 +339,28 @@ window.SETUP = {
               icon: "camera",
               name: "摄像头",
               model: "Insta360 Link 2",
+              links: [
+                { label: "Insta360 官网", url: "https://www.insta360.com/product/insta360-link2" },
+              ],
               summary: "4K 云台摄像头，自带麦克风",
               specs: [
                 ["类型", "4K 云台摄像头"],
                 ["麦克风", "自带"],
+              ],
+            },
+            {
+              icon: "speaker",
+              name: "音箱",
+              model: "Marshall Stanmore III",
+              links: [{ label: "Marshall 官网", url: "https://www.marshall.com/us/en/product/stanmore-iii" }],
+              summary: "蓝牙 5.2，RCA + 3.5 mm，棕色",
+              specs: [
+                ["颜色", "棕色"],
+                ["无线", "蓝牙 5.2"],
+                ["有线输入", "RCA ×1，3.5 mm ×1"],
+                ["功放", "低音 50 W ×1，高音 15 W ×2"],
+                ["频响", "45 到 20,000 Hz"],
+                ["尺寸", "350 × 203 × 188 mm，4.25 kg"],
               ],
             },
           ],
@@ -294,6 +374,9 @@ window.SETUP = {
               icon: "router",
               name: "路由器",
               model: "Bouygues Bbox（Sagemcom F@st 5688b）",
+              links: [
+                { label: "规格讨论（bbox-mag 论坛）", url: "https://www.bbox-mag.fr/forum/viewtopic.php?p=23767" },
+              ],
               summary: "光纤，Wi-Fi 6E，运营商赠送",
               specs: [
                 ["来源", "Bouygues Telecom 宽带赠送"],
@@ -306,10 +389,10 @@ window.SETUP = {
           ],
         },
       ],
-      todo: ["电源（品牌、瓦数）", "键盘具体型号和轴体", "音箱 / USB 声卡"],
+      todo: [],
     },
 
-    { id: "appliances", title: "家电", groups: [], todo: [] },
-    { id: "furniture", title: "家具", groups: [], todo: [] },
+    { id: "appliances", title: "家电", icon: "fridge", groups: [], todo: [] },
+    { id: "furniture", title: "家具", icon: "sofa", groups: [], todo: [] },
   ],
 };
