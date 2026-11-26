@@ -564,8 +564,8 @@ window.SETUP = {
               name: "沙发",
               model: "Bobochic ATILLA",
               links: [{ label: "Bobochic 商品页", url: "https://bobochicparis.com/fr/canapes-d-angle-convertibles/17496-canape-d-angle-convertible-coffre-atilla-tissu-texture.html" }],
-              summary: "转角沙发床，带储物",
-              specs: [["类型", "转角沙发床，带储物"]],
+              summary: "转角沙发床，带储物，244 × 149 cm",
+              specs: [["类型", "转角沙发床，带储物"], ["尺寸", "长 244 × 宽 149 × 高 90 cm"], ["贵妃位坐深", "110 cm（带靠垫）"]],
               buy: { delivered: "2024-08", channel: "Bobochic", price: "€1,284.06" },
             },
             {
@@ -573,8 +573,8 @@ window.SETUP = {
               name: "电视柜",
               model: "Homary Fero",
               links: [{ label: "Homary 商品页", url: "https://fr.homary.com/lditem/fero-minimalist-walnut-rectangle-extendable-tv-stand-with-3-drawers-up-to-120-44425.html?currency=eur&language=fr&gad_source=1" }],
-              summary: "可伸缩，胡桃木色，3 个抽屉",
-              specs: [["特点", "可伸缩，3 个抽屉"], ["颜色", "胡桃木色"]],
+              summary: "可伸缩 180 到 280 cm，胡桃木色，3 个抽屉",
+              specs: [["宽度", "180 到 280 cm（可伸缩）"], ["深度", "40 cm"], ["高度", "40 cm"], ["抽屉", "3 个"], ["颜色", "胡桃木色"]],
               buy: { delivered: "2024-07-02", channel: "Homary", price: "€424.99" },
             },
             {
@@ -591,8 +591,8 @@ window.SETUP = {
               name: "餐桌",
               model: "IKEA NORDEN",
               links: [{ label: "IKEA 商品页", url: "https://www.ikea.com/fr/fr/p/norden-table-a-rabat-bouleau-90423887/" }],
-              summary: "折叠桌，桦木",
-              specs: [["类型", "折叠桌"], ["材质", "桦木"]],
+              summary: "折叠桌，桦木，展开 152 × 80 cm",
+              specs: [["类型", "折叠桌，带 6 个抽屉"], ["材质", "桦木"], ["长度", "26 / 89 / 152 cm（全收 / 开一边 / 全开）"], ["宽度", "80 cm"], ["高度", "74 cm"], ["座位", "2 到 4 人"]],
               buy: { delivered: "2024-06-30", channel: "IKEA", price: "€279" },
             },
             {
