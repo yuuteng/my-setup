@@ -487,10 +487,10 @@ window.SETUP = {
               icon: "washer",
               name: "洗衣机",
               model: "LG F94D14STS",
+              links: [{ label: "LG 官网", url: "https://www.lg.com/fr/lavage/lave-linge/f94r92wste-lave-linge-standards/" }],
               summary: "滚筒洗衣机",
               specs: [["类型", "滚筒洗衣机"]],
               buy: { delivered: "2024-07-09", price: "€699.99" },
-              note: "表格里型号写的是 F94D14STS，但旁边的链接是另一个型号 F94R92WSTE。以机器铭牌为准。",
             },
             {
               icon: "washer",
