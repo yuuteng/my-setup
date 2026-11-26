@@ -338,7 +338,8 @@ footer { padding: 0 0 calc(34px + env(safe-area-inset-bottom)); text-align: cent
   <span id="toastText"></span>
 </div>
 
-<script src="data.js"></script>
+<!-- 带上时间戳，数据改了以后不会被浏览器缓存住 -->
+<script>document.write('<script src="data.js?t=' + Date.now() + '"><\/script>');</script>
 <script>
 (() => {
   const D = window.SETUP;
