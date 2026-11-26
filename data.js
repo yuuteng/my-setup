@@ -263,7 +263,7 @@ window.SETUP = {
                 ["游戏功能", "VRR、ALLM、FreeSync"],
                 ["HDR", "HDR10、HDR10+、Dolby Vision IQ、HLG"],
                 ["亮度", "2000 尼特（标称）"],
-                ["HDMI 1", "4K 144 Hz（接电脑用这个）"],
+                ["HDMI 1", "4K 144 Hz"],
                 ["HDMI 2", "4K 120 Hz"],
                 ["HDMI 3", "4K 60 Hz"],
                 ["HDMI 4", "4K 60 Hz，eARC / ARC"],
