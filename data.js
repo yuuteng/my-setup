@@ -321,12 +321,19 @@ window.SETUP = {
             {
               icon: "gamepad",
               name: "手柄 1",
-              model: "飞智 八爪鱼 5 悟空版",
-              summary: "Flydigi，配套软件飞智空间站",
+              model: "飞智 八爪鱼 5 龙珠Z 联名标准款",
+              links: [
+                { label: "八爪鱼 5 发布报道（新浪科技）", url: "https://finance.sina.com.cn/tech/digi/2025-06-10/doc-inezrake8784392.shtml" },
+              ],
+              summary: "Flydigi，力反馈扳机，黑金配色",
               specs: [
                 ["品牌", "Flydigi 飞智"],
+                ["扳机", "力反馈扳机"],
+                ["摇杆", "力调节合金摇杆 2.0（30 到 100 gf）"],
+                ["配色", "黑金（龙珠Z 联名）"],
                 ["软件", "飞智空间站"],
               ],
+              buy: { date: "2026-05-30", channel: "天猫 flydigi飞智旗舰店", price: "¥550" },
             },
             {
               icon: "gamepad",
