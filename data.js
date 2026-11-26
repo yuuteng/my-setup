@@ -1,311 +1,315 @@
-// 我的设备清单数据。要改配置，只改这个文件。
-// 每个设备：name 名称、model 型号（点击可复制）、specs 规格列表、tags 标签、note 备注。
-// model 写成 null 表示「待补充」。
+// 家里的东西清单。要增删改，只改这个文件。
+//
+// 结构：pages（页面）→ groups（分组）→ items（物品）。
+// 每个物品可以写的字段，都是可选的，没有就不写：
+//   name     叫什么（如「显卡」「冰箱」）
+//   model    型号，点击可复制
+//   summary  汇总表里的一句话规格
+//   specs    详细规格，[["名称", "内容"], ...]
+//   buy      购买信息 { date: "2025-08-04", channel: "Amazon", price: "€1,299" }
+//   note     需要提醒的事
+//   icon     图标名，见 index.html 里的 ICONS
 
 window.SETUP = {
   updated: "2026-11-26",
 
-  stats: [
-    { value: 16, unit: "GB", label: "显存" },
-    { value: 16, unit: "线程", label: "处理器" },
-    { value: 16, unit: "GB", label: "内存" },
-    { value: 4.25, unit: "TB", label: "存储", decimals: 2 },
-  ],
-
-  groups: [
+  pages: [
     {
       id: "pc",
-      title: "主机",
-      subtitle: "机箱里的核心硬件",
-      items: [
+      title: "电脑",
+      groups: [
         {
-          icon: "gpu",
-          accent: "green",
-          name: "显卡",
-          model: "NVIDIA GeForce RTX 5080",
-          specs: [
-            ["显存", "16 GB GDDR7"],
-            ["品牌", "技嘉 GIGABYTE"],
-            ["帧生成", "DLSS 多帧生成 x2 / x3 / x4"],
+          id: "host",
+          title: "主机",
+          items: [
+            {
+              icon: "gpu",
+              name: "显卡",
+              model: "GIGABYTE GeForce RTX 5080 GAMING OC 16G",
+              summary: "16 GB GDDR7，DP 2.1b ×3 + HDMI 2.1b ×1",
+              specs: [
+                ["型号编号", "GV-N5080GAMING OC-16GD"],
+                ["显存", "16 GB GDDR7"],
+                ["加速频率", "2730 MHz"],
+                ["视频接口", "DisplayPort 2.1b ×3，HDMI 2.1b ×1"],
+                ["供电", "16 针 ×1，建议电源 850 W"],
+                ["尺寸", "340 × 140 × 70 mm"],
+                ["帧生成", "DLSS 多帧生成 x2 / x3 / x4"],
+              ],
+              buy: { date: "2025-08-04", channel: "Amazon" },
+            },
+            {
+              icon: "cpu",
+              name: "处理器",
+              model: "Intel Core i5-12600KF",
+              summary: "10 核 16 线程，LGA 1700，无核显",
+              specs: [
+                ["核心", "10 核（6 性能核 + 4 能效核）"],
+                ["线程", "16"],
+                ["接口", "LGA 1700"],
+                ["核显", "无（KF 型号）"],
+              ],
+            },
+            {
+              icon: "board",
+              name: "主板",
+              model: "MSI PRO Z690-A DDR4",
+              summary: "Z690，ATX，DDR4",
+              specs: [
+                ["芯片组", "Intel Z690"],
+                ["板型", "ATX"],
+                ["内部编号", "MS-7D25"],
+                ["BIOS", "1.00（2021-09）"],
+                ["有线网卡", "Intel I225-V 2.5 GbE"],
+              ],
+            },
+            {
+              icon: "ram",
+              name: "内存",
+              model: "Crucial Ballistix BL8G36C16U4W ×2",
+              summary: "16 GB（8 GB ×2），DDR4-3600 CL16",
+              specs: [
+                ["容量", "16 GB（8 GB × 2，双通道）"],
+                ["规格", "DDR4-3600 CL16"],
+                ["颜色", "白色"],
+              ],
+            },
+            {
+              icon: "cooler",
+              name: "CPU 水冷",
+              model: "MSI MAG CoreLiquid C240",
+              summary: "240 一体式水冷",
+              specs: [
+                ["类型", "240 一体式水冷，2 个冷排风扇"],
+                ["水泵转速", "约 3,800 转（满速）"],
+                ["CPU 待机温度", "35°C（2026-11-26 实测）"],
+              ],
+              buy: { date: "2021-11-27" },
+            },
+            {
+              icon: "case",
+              name: "机箱",
+              model: "NZXT H510",
+              summary: "ATX 中塔，黑红配色，钢化玻璃侧板",
+              specs: [
+                ["类型", "ATX 中塔"],
+                ["颜色", "黑 / 红"],
+                ["侧板", "钢化玻璃"],
+                ["前面板", "带 USB Type-C"],
+              ],
+              buy: { date: "2021-11-22", channel: "Amazon.fr" },
+            },
+            {
+              icon: "ssd",
+              name: "固态硬盘 1",
+              model: "Samsung PM9A1 1TB",
+              summary: "NVMe PCIe 4.0，系统盘 C: 到 F:",
+              specs: [
+                ["料号", "MZVL21T0HCLR-00B00"],
+                ["接口", "M.2 NVMe PCIe 4.0"],
+                ["容量", "1 TB"],
+                ["盘符", "C: D: E: F:（系统盘）"],
+                ["健康", "寿命已用 4%（2026-11-26）"],
+              ],
+            },
+            {
+              icon: "ssd",
+              name: "固态硬盘 2",
+              model: "Samsung PM9A1 2TB",
+              summary: "NVMe PCIe 4.0，O: P:",
+              specs: [
+                ["料号", "MZVL22T0HBLB-00BH1"],
+                ["接口", "M.2 NVMe PCIe 4.0"],
+                ["容量", "2 TB"],
+                ["盘符", "O: P:"],
+                ["健康", "寿命已用 0%（2026-11-26）"],
+              ],
+            },
+            {
+              icon: "ssd",
+              name: "固态硬盘 3",
+              model: "Samsung 850 EVO mSATA 250GB",
+              summary: "SATA，G:",
+              specs: [
+                ["接口", "mSATA（SATA）"],
+                ["容量", "250 GB"],
+                ["盘符", "G:"],
+                ["健康", "磨损剩余 96%，通电 19,780 小时"],
+              ],
+            },
+            {
+              icon: "hdd",
+              name: "机械硬盘",
+              model: "HGST Travelstar HTS541010A9E680",
+              summary: "1 TB，2.5 英寸 5400 转，H: 到 N:",
+              specs: [
+                ["容量", "1 TB"],
+                ["规格", "2.5 英寸，5400 转，SATA"],
+                ["盘符", "H: 到 N:"],
+                ["通电时间", "30,577 小时"],
+                ["磁头加载次数", "575,074（设计寿命约 60 万）"],
+              ],
+              note: "从旧笔记本拆下来的盘，已接近设计寿命。重要数据要尽快备份。",
+            },
+            {
+              icon: "net",
+              name: "无线网卡",
+              model: "Intel Wi-Fi 6E AX210",
+              summary: "Wi-Fi 6E 160 MHz + 蓝牙",
+              specs: [
+                ["无线", "Wi-Fi 6E，160 MHz"],
+                ["蓝牙", "Intel Wireless Bluetooth"],
+              ],
+            },
+            {
+              icon: "os",
+              name: "系统",
+              model: "Windows 11 专业版",
+              summary: "64 位，版本 10.0.26200",
+              specs: [
+                ["版本号", "10.0.26200"],
+                ["架构", "64 位"],
+              ],
+            },
           ],
-          tags: ["DLSS 4", "光追", "路径追踪"],
-          note: "具体型号（如 GAMING OC / AERO / WINDFORCE）待补充。",
         },
+
         {
-          icon: "cpu",
-          accent: "blue",
-          name: "处理器",
-          model: "Intel Core i5-12600KF",
-          specs: [
-            ["核心", "10 核（6 性能核 + 4 能效核）"],
-            ["线程", "16"],
-            ["接口", "LGA 1700"],
-            ["核显", "无（KF 型号）"],
+          id: "display",
+          title: "显示",
+          items: [
+            {
+              icon: "monitor",
+              name: "主显示器",
+              model: "BenQ EX2780Q",
+              summary: "27 英寸 IPS，2560×1440，144 Hz",
+              specs: [
+                ["尺寸", "27 英寸 IPS"],
+                ["分辨率", "2560 × 1440"],
+                ["刷新率", "144 Hz"],
+                ["HDR", "DisplayHDR 400"],
+                ["可变刷新率", "FreeSync"],
+              ],
+            },
+            {
+              icon: "monitor",
+              name: "副显示器",
+              model: "HP E243d",
+              summary: "23.8 英寸 IPS，1920×1080，60 Hz",
+              specs: [
+                ["尺寸", "23.8 英寸 IPS"],
+                ["分辨率", "1920 × 1080"],
+                ["刷新率", "60 Hz"],
+                ["特点", "USB-C 扩展坞显示器，带摄像头"],
+              ],
+            },
+            {
+              icon: "tv",
+              name: "电视",
+              model: "TCL 85MQLED87",
+              summary: "85 英寸 QLED Mini LED，4K 144 Hz，VRR",
+              specs: [
+                ["尺寸", "85 英寸"],
+                ["面板", "QLED 量子点，Mini LED 背光"],
+                ["分辨率", "3840 × 2160（4K）"],
+                ["刷新率", "原生 144 Hz，支持 4K 144 Hz"],
+                ["游戏功能", "VRR、ALLM、FreeSync"],
+                ["HDR", "HDR10、HDR10+、Dolby Vision IQ、HLG"],
+                ["亮度", "2000 尼特（标称）"],
+                ["HDMI", "4 个，HDMI 2.1，带 eARC"],
+                ["音响", "2.1 声道 Onkyo，50 W"],
+                ["系统", "Google TV"],
+              ],
+              note: "4 个 HDMI 口里有几个支持 4K 144 Hz，各零售商说法不一（2 个或 4 个），以电视接口旁的标注为准。",
+            },
           ],
-          tags: ["12 代酷睿", "可超频"],
         },
+
         {
-          icon: "board",
-          accent: "red",
-          name: "主板",
-          model: "MSI PRO Z690-A DDR4",
-          specs: [
-            ["芯片组", "Intel Z690"],
-            ["板型", "ATX"],
-            ["内部编号", "MS-7D25"],
-            ["BIOS", "1.00（2021-09）"],
+          id: "gear",
+          title: "外设",
+          items: [
+            {
+              icon: "mouse",
+              name: "鼠标",
+              model: "Logitech G PRO Wireless",
+              summary: "LIGHTSPEED 无线",
+              specs: [
+                ["连接", "LIGHTSPEED 无线接收器"],
+                ["软件", "Logitech G HUB"],
+              ],
+            },
+            {
+              icon: "keyboard",
+              name: "键盘",
+              model: "Varmilo 阿米洛（蓝牙名 VD-2）",
+              summary: "蓝牙机械键盘",
+              specs: [["连接", "蓝牙"]],
+            },
+            {
+              icon: "headphones",
+              name: "头戴耳机",
+              model: "Sony WH-1000XM6",
+              summary: "蓝牙主动降噪",
+              specs: [
+                ["类型", "头戴式主动降噪"],
+                ["连接", "蓝牙"],
+              ],
+            },
+            {
+              icon: "gamepad",
+              name: "手柄 1",
+              model: "飞智 八爪鱼 5 悟空版",
+              summary: "Flydigi，配套软件飞智空间站",
+              specs: [
+                ["品牌", "Flydigi 飞智"],
+                ["软件", "飞智空间站"],
+              ],
+            },
+            {
+              icon: "gamepad",
+              name: "手柄 2",
+              model: "Xbox Wireless Controller",
+              summary: "蓝牙",
+              specs: [["连接", "蓝牙"]],
+            },
+            {
+              icon: "camera",
+              name: "摄像头",
+              model: "Insta360 Link 2",
+              summary: "4K 云台摄像头，自带麦克风",
+              specs: [
+                ["类型", "4K 云台摄像头"],
+                ["麦克风", "自带"],
+              ],
+            },
           ],
-          tags: ["DDR4", "PCIe 5.0"],
-          note: "BIOS 还是出厂的最早版本，可以考虑更新。",
         },
+
         {
-          icon: "ram",
-          accent: "orange",
-          name: "内存",
-          model: "Crucial Ballistix BL8G36C16U4W ×2",
-          specs: [
-            ["容量", "16 GB（8 GB × 2，双通道）"],
-            ["规格", "DDR4-3600 CL16"],
-            ["颜色", "白色"],
+          id: "network",
+          title: "网络",
+          items: [
+            {
+              icon: "router",
+              name: "路由器",
+              model: "Bouygues Bbox（Sagemcom F@st 5688b）",
+              summary: "光纤，Wi-Fi 6E，运营商赠送",
+              specs: [
+                ["来源", "Bouygues Telecom 宽带赠送"],
+                ["接入", "光纤 FTTH"],
+                ["Wi-Fi", "Wi-Fi 6E（802.11ax），有 5 GHz 和 6 GHz"],
+                ["固件", "25.1.22"],
+                ["开始使用", "2025-03-04"],
+              ],
+            },
           ],
-          tags: ["DDR4", "3600 MHz"],
-          note: "4K + 路径追踪时 16 GB 偏紧，升级到 32 GB 会更稳。",
-        },
-        {
-          icon: "cooler",
-          accent: "teal",
-          name: "CPU 水冷",
-          model: "MSI MAG CoreLiquid C240",
-          specs: [
-            ["类型", "240 一体式水冷，2 个冷排风扇"],
-            ["购买日期", "2021-11-27"],
-            ["水泵转速", "约 3,800 转（满速）"],
-            ["CPU 待机温度", "35°C（2026-11-26 实测）"],
-          ],
-          tags: ["240 水冷", "已用 5 年"],
-          note: "已过保修。目前散热正常，一体水冷常见寿命是 5 到 7 年。",
-        },
-        {
-          icon: "ssd",
-          accent: "purple",
-          name: "固态硬盘 1",
-          model: "Samsung PM9A1 2TB",
-          specs: [
-            ["料号", "MZVL22T0HBLB-00BH1"],
-            ["接口", "M.2 NVMe PCIe 4.0"],
-            ["容量", "2 TB"],
-            ["盘符", "O: P:"],
-            ["健康", "寿命已用 0%"],
-          ],
-          tags: ["NVMe", "PCIe 4.0", "健康"],
-        },
-        {
-          icon: "ssd",
-          accent: "purple",
-          name: "固态硬盘 2",
-          model: "Samsung PM9A1 1TB",
-          specs: [
-            ["料号", "MZVL21T0HCLR-00B00"],
-            ["接口", "M.2 NVMe PCIe 4.0"],
-            ["容量", "1 TB"],
-            ["盘符", "C: D: E: F:（系统盘）"],
-            ["健康", "寿命已用 4%"],
-          ],
-          tags: ["NVMe", "PCIe 4.0", "健康"],
-        },
-        {
-          icon: "ssd",
-          accent: "purple",
-          name: "固态硬盘 3",
-          model: "Samsung 850 EVO mSATA 250GB",
-          specs: [
-            ["接口", "mSATA（SATA）"],
-            ["容量", "250 GB"],
-            ["盘符", "G:"],
-            ["健康", "磨损剩余 96%，通电 19,780 小时"],
-          ],
-          tags: ["SATA", "健康"],
-        },
-        {
-          icon: "hdd",
-          accent: "gray",
-          name: "机械硬盘",
-          model: "HGST Travelstar HTS541010A9E680",
-          specs: [
-            ["容量", "1 TB"],
-            ["规格", "2.5 英寸，5400 转"],
-            ["接口", "SATA"],
-            ["盘符", "H: 到 N:"],
-            ["通电时间", "30,577 小时"],
-            ["磁头加载次数", "575,074（设计寿命约 60 万）"],
-          ],
-          tags: ["HDD", "老化"],
-          note: "从旧笔记本拆下来的盘，没有坏道，但已接近设计寿命，也是开机异响的头号嫌疑。重要数据要尽快备份。",
-        },
-        {
-          icon: "net",
-          accent: "teal",
-          name: "网络",
-          model: "Intel Wi-Fi 6E AX210",
-          specs: [
-            ["无线", "Wi-Fi 6E，160 MHz"],
-            ["蓝牙", "Intel Wireless Bluetooth"],
-            ["有线", "Intel I225-V 2.5 GbE（主板自带）"],
-          ],
-          tags: ["Wi-Fi 6E", "2.5G 网口"],
-        },
-        {
-          icon: "os",
-          accent: "blue",
-          name: "系统",
-          model: "Windows 11 专业版",
-          specs: [
-            ["版本号", "10.0.26200"],
-            ["架构", "64 位"],
-          ],
-          tags: ["Win 11 Pro"],
         },
       ],
+      todo: ["电源（品牌、瓦数）", "键盘具体型号和轴体", "音箱 / USB 声卡"],
     },
 
-    {
-      id: "display",
-      title: "显示",
-      subtitle: "两台显示器，一台电视",
-      items: [
-        {
-          icon: "monitor",
-          accent: "blue",
-          name: "主显示器",
-          model: "BenQ EX2780Q",
-          specs: [
-            ["尺寸", "27 英寸 IPS"],
-            ["分辨率", "2560 × 1440（2K）"],
-            ["刷新率", "144 Hz"],
-            ["HDR", "DisplayHDR 400"],
-          ],
-          tags: ["2K", "144 Hz", "FreeSync"],
-          note: "玩游戏：DLSS 质量 + 帧生成 x2，NVIDIA 控制面板开 G-Sync。",
-        },
-        {
-          icon: "monitor",
-          accent: "gray",
-          name: "副显示器",
-          model: "HP E243d",
-          specs: [
-            ["尺寸", "23.8 英寸 IPS"],
-            ["分辨率", "1920 × 1080"],
-            ["刷新率", "60 Hz"],
-            ["特点", "USB-C 扩展坞显示器，带摄像头"],
-          ],
-          tags: ["1080p", "USB-C"],
-        },
-        {
-          icon: "tv",
-          accent: "pink",
-          name: "电视",
-          model: "TCL（系统识别名 Beyond TV）",
-          specs: [
-            ["尺寸", "约 55 英寸（按面板尺寸推算）"],
-            ["分辨率", "4K"],
-            ["生产年份", "2025"],
-          ],
-          tags: ["4K", "客厅"],
-          note: "具体型号和刷新率（60 / 120 / 144 Hz）待补充。",
-        },
-      ],
-    },
-
-    {
-      id: "gear",
-      title: "外设",
-      subtitle: "键鼠、耳机、手柄、摄像头",
-      items: [
-        {
-          icon: "mouse",
-          accent: "teal",
-          name: "鼠标",
-          model: "Logitech G PRO Wireless",
-          specs: [
-            ["连接", "LIGHTSPEED 无线接收器"],
-            ["软件", "Logitech G HUB"],
-          ],
-          tags: ["无线", "电竞"],
-        },
-        {
-          icon: "keyboard",
-          accent: "orange",
-          name: "键盘",
-          model: "Varmilo 阿米洛（蓝牙名 VD-2）",
-          specs: [["连接", "蓝牙"]],
-          tags: ["机械键盘", "蓝牙"],
-          note: "具体型号和轴体待补充。",
-        },
-        {
-          icon: "headphones",
-          accent: "purple",
-          name: "头戴耳机",
-          model: "Sony WH-1000XM6",
-          specs: [
-            ["类型", "头戴式主动降噪"],
-            ["连接", "蓝牙"],
-          ],
-          tags: ["降噪", "蓝牙"],
-        },
-        {
-          icon: "earbuds",
-          accent: "gray",
-          name: "入耳耳机",
-          model: "Apple AirPods Pro ×2",
-          specs: [
-            ["数量", "2 副"],
-            ["连接", "蓝牙"],
-          ],
-          tags: ["降噪", "蓝牙"],
-          note: "是第几代待补充。",
-        },
-        {
-          icon: "gamepad",
-          accent: "green",
-          name: "手柄 1",
-          model: "Xbox Wireless Controller",
-          specs: [["连接", "蓝牙"]],
-          tags: ["Xbox", "蓝牙"],
-        },
-        {
-          icon: "gamepad",
-          accent: "red",
-          name: "手柄 2",
-          model: "Flydigi 飞智",
-          specs: [["驱动", "飞智空间站"]],
-          tags: ["飞智"],
-          note: "具体型号待补充。",
-        },
-        {
-          icon: "camera",
-          accent: "pink",
-          name: "摄像头",
-          model: "Insta360 Link 2",
-          specs: [
-            ["类型", "4K 云台摄像头"],
-            ["麦克风", "自带"],
-          ],
-          tags: ["4K", "AI 追踪"],
-        },
-      ],
-    },
-  ],
-
-  // 还不知道的东西。补上以后，从这里删掉，加到上面对应的分组里。
-  todo: [
-    "电源（品牌、瓦数）",
-    "机箱和机箱风扇",
-    "显卡具体型号",
-    "电视具体型号和刷新率",
-    "键盘具体型号和轴体",
-    "飞智手柄型号",
-    "AirPods Pro 是第几代",
-    "音箱 / USB 声卡",
-    "路由器",
+    { id: "appliances", title: "家电", groups: [], todo: [] },
+    { id: "furniture", title: "家具", groups: [], todo: [] },
   ],
 };
