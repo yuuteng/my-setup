@@ -152,6 +152,7 @@ window.SETUP = {
                 ["支持主板", "ATX、MicroATX、Mini-ITX"],
                 ["扩展槽", "7 个"],
                 ["前面板", "带 USB Type-C"],
+                ["改装", "为了装下 340 mm 的显卡，剪开过机箱内部"],
               ],
               buy: { date: "2021-11-22", channel: "Amazon.fr" },
             },
@@ -261,11 +262,11 @@ window.SETUP = {
               icon: "net",
               name: "无线网卡",
               model: "Intel Wi-Fi 6E AX210",
-              summary: "Wi-Fi 6E 160 MHz + 蓝牙",
+              summary: "Wi-Fi 6E 160 MHz + 蓝牙 5.4",
               specs: [
                 ["无线", "Wi-Fi 6E，最高 2.4 Gbps"],
                 ["频段", "2.4 / 5 / 6 GHz，160 MHz"],
-                ["蓝牙", "有"],
+                ["蓝牙", "5.4"],
               ],
               more: [
                 ["天线", "2 × 2"],
