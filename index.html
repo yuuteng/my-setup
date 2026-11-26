@@ -5,61 +5,70 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <title>家里的东西</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%231d1d1f'/%3E%3Cpath d='M16 30 32 17l16 13v17H16Z' fill='none' stroke='white' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23f5a524'/%3E%3Cpath d='M16 30 32 17l16 13v17H16Z' fill='none' stroke='%23111' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f5f5f7;
-  --card: rgba(255, 255, 255, .78);
-  --solid: #ffffff;
-  --line: rgba(0, 0, 0, .08);
-  --text: #1d1d1f;
-  --text-2: #6e6e73;
-  --text-3: #a1a1a6;
-  --fill: rgba(0, 0, 0, .045);
-  --fill-2: rgba(0, 0, 0, .08);
-  --accent: #0071e3;
-  --warn: #b25000;
-  --glow-1: #dfe6f3; --glow-2: #efe7e2;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 10px 30px -14px rgba(0, 0, 0, .12);
-  --shadow-up: 0 2px 4px rgba(0, 0, 0, .05), 0 26px 50px -20px rgba(0, 0, 0, .22);
-  --radius: 20px;
+  --bg: #efebe3;
+  --card: rgba(250, 248, 243, .88);
+  --solid: #fffdf8;
+  --line: #e4ddd0;
+  --text: #2a251d;
+  --text-2: #5b5346;
+  --text-3: #8d8576;
+  --fill: rgba(96, 74, 30, .06);
+  --fill-2: rgba(96, 74, 30, .1);
+  --accent: #96590a;
+  --accent-fill: #f2a93b;
+  --on-accent: #3a2400;
+  --warn: #c5441c;
+  --glow-1: #f4dcae; --glow-2: #dfe5f1;
+  --shadow: 0 0 0 1px #e4ddd0, 0 10px 30px -16px rgba(60, 44, 14, .18);
+  --shadow-up: 0 0 0 1px #cfc6b5, 0 26px 50px -20px rgba(60, 44, 14, .3);
+  --radius: 16px;
   --ease: cubic-bezier(.22, 1, .36, 1);
-  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "PingFang SC",
-          "HarmonyOS Sans SC", "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", sans-serif;
+  --font: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei UI", "Microsoft YaHei", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0b0b0c;
-    --card: rgba(30, 30, 32, .78);
-    --solid: #2c2c2e;
-    --line: rgba(255, 255, 255, .09);
-    --text: #f5f5f7;
-    --text-2: #a1a1a6;
-    --text-3: #6e6e73;
-    --fill: rgba(255, 255, 255, .06);
-    --fill-2: rgba(255, 255, 255, .11);
-    --accent: #2997ff;
-    --warn: #ffb340;
-    --glow-1: #1a2130; --glow-2: #241d1c;
-    --shadow: 0 0 0 .5px rgba(255, 255, 255, .07), 0 14px 36px -18px rgba(0, 0, 0, .9);
-    --shadow-up: 0 0 0 .5px rgba(255, 255, 255, .13), 0 28px 56px -20px #000;
+    --bg: #0b1220;
+    --card: rgba(17, 26, 44, .86);
+    --solid: #1d2a45;
+    --line: #223050;
+    --text: #e6ecf5;
+    --text-2: #a7b4c8;
+    --text-3: #66758f;
+    --fill: rgba(148, 170, 214, .07);
+    --fill-2: rgba(148, 170, 214, .13);
+    --accent: #f5a524;
+    --accent-fill: #f5a524;
+    --on-accent: #111111;
+    --warn: #ff6b3d;
+    --glow-1: #13254d; --glow-2: #3a2812;
+    --shadow: 0 0 0 1px #1f2b42, 0 14px 36px -18px rgba(0, 0, 0, .8);
+    --shadow-up: 0 0 0 1px #2c3a57, 0 28px 56px -20px rgba(0, 0, 0, .9);
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0b0b0c;
-  --card: rgba(30, 30, 32, .78);
-  --solid: #2c2c2e;
-  --line: rgba(255, 255, 255, .09);
-  --text: #f5f5f7;
-  --text-2: #a1a1a6;
-  --text-3: #6e6e73;
-  --fill: rgba(255, 255, 255, .06);
-  --fill-2: rgba(255, 255, 255, .11);
-  --accent: #2997ff;
-  --warn: #ffb340;
-  --glow-1: #1a2130; --glow-2: #241d1c;
-  --shadow: 0 0 0 .5px rgba(255, 255, 255, .07), 0 14px 36px -18px rgba(0, 0, 0, .9);
-  --shadow-up: 0 0 0 .5px rgba(255, 255, 255, .13), 0 28px 56px -20px #000;
+  --bg: #0b1220;
+  --card: rgba(17, 26, 44, .86);
+  --solid: #1d2a45;
+  --line: #223050;
+  --text: #e6ecf5;
+  --text-2: #a7b4c8;
+  --text-3: #66758f;
+  --fill: rgba(148, 170, 214, .07);
+  --fill-2: rgba(148, 170, 214, .13);
+  --accent: #f5a524;
+  --accent-fill: #f5a524;
+  --on-accent: #111111;
+  --warn: #ff6b3d;
+  --glow-1: #13254d; --glow-2: #3a2812;
+  --shadow: 0 0 0 1px #1f2b42, 0 14px 36px -18px rgba(0, 0, 0, .8);
+  --shadow-up: 0 0 0 1px #2c3a57, 0 28px 56px -20px rgba(0, 0, 0, .9);
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -103,6 +112,7 @@ button { font: inherit; color: inherit; border: 0; background: none; padding: 0;
   transition: color .25s;
 }
 .tabs button[aria-selected="true"] { color: var(--text); }
+.tabs button[aria-selected="true"] svg { color: var(--accent); }
 .tabs svg { width: 19px; height: 19px; flex: none; }
 .toc { display: grid; gap: 1px; }
 .toc-title { padding: 0 12px 6px; font-size: 12px; font-weight: 700; color: var(--text-3); letter-spacing: .04em; }
@@ -111,7 +121,7 @@ button { font: inherit; color: inherit; border: 0; background: none; padding: 0;
   font-size: 14px; color: var(--text-2); text-align: left; transition: background .2s, color .2s;
 }
 .toc button:hover { background: var(--fill); color: var(--text); }
-.toc button span { color: var(--text-3); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.toc button span { color: var(--text-3); font-family: var(--mono); font-size: 12px; }
 .side .icon-btn { margin-top: auto; }
 
 .icon-btn {
@@ -131,7 +141,7 @@ button { font: inherit; color: inherit; border: 0; background: none; padding: 0;
 .head { display: flex; align-items: center; gap: 12px; margin: 30px 0 14px; }
 .page > .head:first-child { margin-top: 0; }
 h2 { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
-.count { font-size: 13px; font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.count { font-family: var(--mono); font-size: 12.5px; font-weight: 500; color: var(--accent); padding: 2px 8px; border-radius: 6px; background: color-mix(in srgb, var(--accent) 12%, transparent); }
 .text-btn {
   margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
   font-size: 14px; font-weight: 600; color: var(--accent);
@@ -163,9 +173,11 @@ tr.sep td {
   padding: 16px 16px 6px; font-size: 12.5px; font-weight: 700; color: var(--text-3);
   letter-spacing: .04em; box-shadow: none; background: none;
 }
+tr.sep td { color: var(--accent); }
 tr.sep:hover { background: none; }
 tr.sep + tr td { box-shadow: none; }
 .c-name { color: var(--text-2); white-space: nowrap; width: 1%; }
+.c-name svg { width: 17px; height: 17px; margin-right: 8px; vertical-align: -3.5px; color: var(--accent); }
 .c-model { font-weight: 620; }
 .c-spec { color: var(--text-2); }
 .c-go { width: 1%; color: var(--text-3); }
@@ -201,7 +213,7 @@ tr[data-jump]:hover .c-go svg { opacity: 1; transform: none; }
 }
 .card::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
-  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 0%), var(--fill-2), transparent 65%);
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--accent) 13%, transparent), transparent 65%);
   transition: opacity .4s;
 }
 .card:hover { --lift: -4px; box-shadow: var(--shadow-up); }
@@ -218,16 +230,16 @@ tr[data-jump]:hover .c-go svg { opacity: 1; transform: none; }
   background: var(--fill-2); color: var(--text);
   transition: transform .6s var(--ease), background .3s, color .3s;
 }
-.card:hover .ico { transform: scale(1.08) rotate(-5deg); background: var(--text); color: var(--bg); }
+.card:hover .ico { transform: scale(1.08) rotate(-5deg); background: var(--accent-fill); color: var(--on-accent); }
 .ico svg { width: 21px; height: 21px; }
-.kind { font-size: 13.5px; font-weight: 600; color: var(--text-2); }
+.kind { font-size: 13.5px; font-weight: 600; color: var(--accent); }
 .model { display: block; width: 100%; margin-top: 12px; font-size: 18.5px; font-weight: 680; letter-spacing: -.015em; line-height: 1.28; }
 
 .specs { margin-top: 12px; border-radius: 12px; background: var(--fill); overflow: hidden; }
 .specs div { display: flex; gap: 14px; padding: 8px 12px; font-size: 14px; }
 .specs div + div { box-shadow: inset 0 .5px 0 var(--line); }
 .specs dt { flex: none; color: var(--text-2); }
-.specs dd { margin-left: auto; text-align: right; font-weight: 520; font-variant-numeric: tabular-nums; }
+.specs dd { margin-left: auto; text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; }
 .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .links a {
   position: relative; display: inline-flex; align-items: center; gap: 5px; text-decoration: none;
@@ -258,7 +270,7 @@ tr[data-jump]:hover .c-go svg { opacity: 1; transform: none; }
 .none { display: none; padding: 50px 0; text-align: center; color: var(--text-2); }
 .none.show { display: block; }
 
-footer { padding: 0 0 calc(34px + env(safe-area-inset-bottom)); text-align: center; font-size: 12.5px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+footer { padding: 0 0 calc(34px + env(safe-area-inset-bottom)); text-align: center; font-size: 12.5px; color: var(--text-3); font-family: var(--mono); }
 
 /* 复制提示 */
 .toast {
@@ -272,7 +284,7 @@ footer { padding: 0 0 calc(34px + env(safe-area-inset-bottom)); text-align: cent
   transition: transform .55s var(--ease), opacity .3s;
 }
 .toast.show { transform: translate(-50%, 0) scale(1); opacity: 1; }
-.toast svg { flex: none; width: 19px; height: 19px; color: #30d158; }
+.toast svg { flex: none; width: 19px; height: 19px; color: #3ecf8e; }
 .toast span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .toast.show path { stroke-dasharray: 24; stroke-dashoffset: 24; animation: draw .45s .12s var(--ease) forwards; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
@@ -417,7 +429,7 @@ footer { padding: 0 0 calc(34px + env(safe-area-inset-bottom)); text-align: cent
     const rows = p.groups.map((g) =>
       (multi ? `<tr class="sep"><td colspan="4">${esc(g.title)}</td></tr>` : "") +
       g.items.map((it, i) => `<tr class="reveal" data-jump="${cid(g, i)}">
-        <td class="c-name">${esc(it.name)}</td>
+        <td class="c-name">${svg(ICONS[it.icon] || ICONS.box)}${esc(it.name)}</td>
         <td class="c-model"><button class="jump" title="查看详情">${esc(it.model || "")}</button></td>
         <td class="c-spec">${esc(it.summary || "")}</td>
         <td class="c-go">${CHEV}</td>
