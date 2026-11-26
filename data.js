@@ -430,13 +430,10 @@ window.SETUP = {
               icon: "oven",
               name: "烤箱",
               model: "AEG BPB331061W",
-              links: [
-                { label: "AEG 官网", url: "https://www.aeg.fr/kitchen/cooking/ovens/oven/bpb331061w/" },
-                { label: "规格表", url: "https://www.electromenager-compare.com/four-AEGBPB331061W-AEG-BPB331061W.htm" },
-              ],
+              links: [{ label: "规格表", url: "https://www.electromenager-compare.com/four-AEGBPB331061W-AEG-BPB331061W.htm" }],
               summary: "嵌入式烤箱，72 升，高温自清洁，白色",
               specs: [["类型", "嵌入式电烤箱"], ["容量", "72 升"], ["清洁", "高温热解自清洁"], ["颜色", "白色"], ["能效", "A+"], ["功率", "3490 W"]],
-              buy: { delivered: "2024-07-12", channel: "Abribat", price: "€490" },
+              buy: { date: "2024-06-26", delivered: "2024-07-12", channel: "Abribat", price: "€490" },
             },
             {
               icon: "oven",
