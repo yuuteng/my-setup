@@ -530,8 +530,13 @@ window.SETUP = {
               icon: "bed",
               name: "床",
               model: "Maxcolchon Rond Contour Premium",
-              summary: "带床头",
-              specs: [["配件", "带床头"], ["换货", "2024-07-12 换过一次"]],
+              links: [
+                { label: "西班牙官网商品页", url: "https://www.maxcolchon.com/canapes-abatibles-tapizados-c-63/canape-redondo-Premium-p-693" },
+                { label: "法国商品页存档（2025-09）", url: "https://web.archive.org/web/20250909231451/https://www.maxcolchon.com/fr/lits-coffres-tapisses-c-63/lit-coffre-rond-contour-premium-p-693" },
+              ],
+              summary: "储物床，带床头",
+              specs: [["类型", "储物床（掀盖式）"], ["配件", "带床头"], ["换货", "2024-07-12 换过一次"]],
+              note: "Maxcolchon 已停止在法国的业务，西班牙站还在卖同一款（叫 Canapé Redondo Premium）。售后邮箱：sav@maxcolchon.com。",
               buy: { delivered: "2024-06-29", channel: "Maxcolchon（邮件下单）", price: "€966.88" },
             },
             {
