@@ -591,8 +591,9 @@ window.SETUP = {
               icon: "box",
               name: "墙架",
               model: "IKEA TRANHULT / SANDSHULT",
+              links: [{ label: "IKEA 商品页", url: "https://www.ikea.com/fr/fr/p/tranhult-sandshult-etagere-murale-tremble-s99326090/" }],
               summary: "120 × 30 cm，杨木",
-              specs: [["尺寸", "120 × 30 cm"], ["材质", "杨木"]],
+              specs: [["尺寸", "120 × 30 cm"], ["材质", "杨木"], ["数量", "4 块（按单价 €44.99 推算）"], ["承重", "最多 20 kg"]],
               buy: { delivered: "2024-06-30", channel: "IKEA", price: "€179.96" },
             },
             {
