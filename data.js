@@ -382,6 +382,20 @@ window.SETUP = {
               ],
               buy: { delivered: "2024-07-12", channel: "U-Techno", price: "€1,599" },
             },
+            {
+              icon: "cable",
+              name: "电视 HDMI 线",
+              model: "绿联 HDMI 2.1 经典款 8 米",
+              summary: "HDMI 2.1，8 米，电脑接电视用",
+              specs: [
+                ["规格", "HDMI 2.1"],
+                ["长度", "8 米"],
+                ["标称", "8K 60 Hz，4K 240 Hz"],
+                ["用途", "电脑接电视"],
+              ],
+              buy: { date: "2025-01-07", channel: "天猫 绿联数码旗舰店", price: "¥152.20" },
+              note: "2026-11-26 实测：接电视 HDMI 1 只能到 4K 120 Hz（YCbCr420，8 位），没有 144 Hz 和 VRR。电视端上报支持 48 Gbps，怀疑是 8 米线太长，跑不满带宽。",
+            },
           ],
         },
 
